@@ -1,0 +1,55 @@
+[
+  {
+    "role": "user",
+    "content": "create a file called `test.txt` within `s04_hooks` directory and then write `hello world` into it "
+  },
+  {
+    "role": "assistant",
+    "content": [ToolUseBlock(id="call_AyMcl38wIVrAvhrWCXSw0Onj", caller=None, input={
+        "path": "s04_hooks/test.txt",
+        "content": "hello world"
+      }, name="write_file", type="tool_use")
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "call_AyMcl38wIVrAvhrWCXSw0Onj",
+        "content": "Wrote 11 bytes to s04_hooks/test.txt"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [TextBlock(citations=None, text="Done", type="text")
+    ]
+  },
+  {
+    "role": "user",
+    "content": "ok, now remove this `test.txt` file by `rm` "
+  },
+  {
+    "role": "assistant",
+    "content": [ToolUseBlock(id="call_kbva0VQF07xZE0GHzDUUWdWC", caller=None, input={
+        "command": "rm s04_hooks/test.txt"
+      }, name="bash", type="tool_use")
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "call_kbva0VQF07xZE0GHzDUUWdWC",
+        "content": "(no output)"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [TextBlock(citations=None, text="Done", type="text")
+    ]
+  }
+]
