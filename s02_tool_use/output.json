@@ -1,0 +1,46 @@
+[
+  {
+    "role": "user",
+    "content": "Create a file called test.py that prints "hello", then read it back"
+  },
+  {
+    "role": "assistant",
+    "content": [ThinkingBlock(signature=None, thinking="The user wants me to create a file called test.py that prints "hello", then read it back.", type="thinking"), ToolUseBlock(id="call_abdc4c570f3c46b48630ad58", caller=None, input={
+        "content": "print("hello")\n",
+        "path": "E:\\xiekaiyong\\ai相关\\learn-claude-code\\test.py"
+      }, name="write_file", type="tool_use")
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "call_abdc4c570f3c46b48630ad58",
+        "content": "Wrote 15 bytes to E:\\xiekaiyong\\ai相关\\learn-claude-code\\test.py"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [ToolUseBlock(id="call_6498b4521aea4ca0bc5def49", caller=None, input={
+        "path": "E:\\xiekaiyong\\ai相关\\learn-claude-code\\test.py"
+      }, name="read_file", type="tool_use")
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "call_6498b4521aea4ca0bc5def49",
+        "content": "print("hello")"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [TextBlock(citations=None, text="Done! Created `test.py` with `print("hello")` and confirmed the contents by reading it back.", type="text")
+    ]
+  }
+]

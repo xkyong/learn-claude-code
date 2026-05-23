@@ -1,0 +1,28 @@
+[
+  {
+    "role": "user",
+    "content": "执行 `rm` 命令，删除 ./s03_permission/test.js 文件"
+  },
+  {
+    "role": "assistant",
+    "content": [ToolUseBlock(id="call_vaZkivGSvuR4bxngxYEjxmk3", caller=None, input={
+        "command": "rm ./s03_permission/test.js"
+      }, name="bash", type="tool_use")
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "tool_result",
+        "tool_use_id": "call_vaZkivGSvuR4bxngxYEjxmk3",
+        "content": "(no output)"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [TextBlock(citations=None, text="已执行删除命令：`rm ./s03_permission/test.js`", type="text")
+    ]
+  }
+]
