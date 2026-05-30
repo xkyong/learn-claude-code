@@ -5,24 +5,36 @@
   },
   {
     "role": "assistant",
-    "content": [ToolUseBlock(id="call_vaZkivGSvuR4bxngxYEjxmk3", caller=None, input={
-        "command": "rm ./s03_permission/test.js"
-      }, name="bash", type="tool_use")
+    "content": [
+      {
+        "caller": null,
+        "id": "call_vaZkivGSvuR4bxngxYEjxmk3",
+        "input": {
+          "command": "rm ./s03_permission/test.js"
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
     ]
   },
   {
     "role": "user",
     "content": [
       {
-        "type": "tool_result",
+        "content": "(no output)",
         "tool_use_id": "call_vaZkivGSvuR4bxngxYEjxmk3",
-        "content": "(no output)"
+        "type": "tool_result"
       }
     ]
   },
   {
     "role": "assistant",
-    "content": [TextBlock(citations=None, text="已执行删除命令：`rm ./s03_permission/test.js`", type="text")
+    "content": [
+      {
+        "citations": null,
+        "text": "已执行删除命令：`rm ./s03_permission/test.js`",
+        "type": "text"
+      }
     ]
   }
 ]

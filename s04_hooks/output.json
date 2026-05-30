@@ -5,25 +5,37 @@
   },
   {
     "role": "assistant",
-    "content": [ToolUseBlock(id="call_AyMcl38wIVrAvhrWCXSw0Onj", caller=None, input={
-        "path": "s04_hooks/test.txt",
-        "content": "hello world"
-      }, name="write_file", type="tool_use")
+    "content": [
+      {
+        "caller": null,
+        "id": "call_AyMcl38wIVrAvhrWCXSw0Onj",
+        "input": {
+          "content": "hello world",
+          "path": "s04_hooks/test.txt"
+        },
+        "name": "write_file",
+        "type": "tool_use"
+      }
     ]
   },
   {
     "role": "user",
     "content": [
       {
-        "type": "tool_result",
+        "content": "Wrote 11 bytes to s04_hooks/test.txt",
         "tool_use_id": "call_AyMcl38wIVrAvhrWCXSw0Onj",
-        "content": "Wrote 11 bytes to s04_hooks/test.txt"
+        "type": "tool_result"
       }
     ]
   },
   {
     "role": "assistant",
-    "content": [TextBlock(citations=None, text="Done", type="text")
+    "content": [
+      {
+        "citations": null,
+        "text": "Done",
+        "type": "text"
+      }
     ]
   },
   {
@@ -32,24 +44,36 @@
   },
   {
     "role": "assistant",
-    "content": [ToolUseBlock(id="call_kbva0VQF07xZE0GHzDUUWdWC", caller=None, input={
-        "command": "rm s04_hooks/test.txt"
-      }, name="bash", type="tool_use")
+    "content": [
+      {
+        "caller": null,
+        "id": "call_kbva0VQF07xZE0GHzDUUWdWC",
+        "input": {
+          "command": "rm s04_hooks/test.txt"
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
     ]
   },
   {
     "role": "user",
     "content": [
       {
-        "type": "tool_result",
+        "content": "(no output)",
         "tool_use_id": "call_kbva0VQF07xZE0GHzDUUWdWC",
-        "content": "(no output)"
+        "type": "tool_result"
       }
     ]
   },
   {
     "role": "assistant",
-    "content": [TextBlock(citations=None, text="Done", type="text")
+    "content": [
+      {
+        "citations": null,
+        "text": "Done",
+        "type": "text"
+      }
     ]
   }
 ]

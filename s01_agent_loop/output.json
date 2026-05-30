@@ -5,92 +5,152 @@
   },
   {
     "role": "assistant",
-    "content": [ThinkingBlock(signature=None, thinking="The user wants me to create a file called hello1.py that prints "Hello, World!".", type="thinking"), ToolUseBlock(id="call_ef5448f85cf841c892efa7ab", caller=None, input={
-        "command": "echo \"print("Hello, World!")\" > "E:/xiekaiyong/ai相关/learn-claude-code/hello1.py""
-      }, name="bash", type="tool_use")
+    "content": [
+      {
+        "signature": null,
+        "thinking": "The user wants me to create a file called hello1.py that prints \"Hello, World!\".",
+        "type": "thinking"
+      },
+      {
+        "caller": null,
+        "id": "call_ef5448f85cf841c892efa7ab",
+        "input": {
+          "command": "echo \"print(\"Hello, World!\")\" > \"E:/xiekaiyong/ai相关/learn-claude-code/hello1.py\""
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
     ]
   },
   {
     "role": "user",
     "content": [
       {
-        "type": "tool_result",
+        "content": "(no output)",
         "tool_use_id": "call_ef5448f85cf841c892efa7ab",
-        "content": "(no output)"
+        "type": "tool_result"
       }
     ]
   },
   {
     "role": "assistant",
-    "content": [ThinkingBlock(signature=None, thinking="The file has been created. Let me verify it was created correctly.", type="thinking"), ToolUseBlock(id="call_decd49d399ce42bfaca944e3", caller=None, input={
-        "command": "cat "E:/xiekaiyong/ai相关/learn-claude-code/hello1.py""
-      }, name="bash", type="tool_use")
+    "content": [
+      {
+        "signature": null,
+        "thinking": "The file has been created. Let me verify it was created correctly.",
+        "type": "thinking"
+      },
+      {
+        "caller": null,
+        "id": "call_decd49d399ce42bfaca944e3",
+        "input": {
+          "command": "cat \"E:/xiekaiyong/ai相关/learn-claude-code/hello1.py\""
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
     ]
   },
   {
     "role": "user",
     "content": [
       {
-        "type": "tool_result",
+        "content": "\"print(\"Hello, World!\")\"",
         "tool_use_id": "call_decd49d399ce42bfaca944e3",
-        "content": "\"print("Hello, World!")\""
+        "type": "tool_result"
       }
     ]
   },
   {
     "role": "assistant",
-    "content": [ThinkingBlock(signature=None, thinking="Hmm, the file contains `\"print("Hello, World!")\"` with quotes. That\"s because the echo command wrapped the content in quotes. Let me fix this.", type="thinking"), TextBlock(citations=None, text="The file has extra quotes. Let me fix that.", type="text"), ToolUseBlock(id="call_5c75288a839b4c2ab707be32", caller=None, input={
-        "command": "printf \"print("Hello, World!")\" > "E:/xiekaiyong/ai相关/learn-claude-code/hello1.py""
-      }, name="bash", type="tool_use")
+    "content": [
+      {
+        "signature": null,
+        "thinking": "Hmm, the file contains `\"print(\"Hello, World!\")\"` with quotes. That\"s because the echo command wrapped the content in quotes. Let me fix this.",
+        "type": "thinking"
+      },
+      {
+        "citations": null,
+        "text": "The file has extra quotes. Let me fix that.",
+        "type": "text"
+      },
+      {
+        "caller": null,
+        "id": "call_5c75288a839b4c2ab707be32",
+        "input": {
+          "command": "printf \"print(\"Hello, World!\")\" > \"E:/xiekaiyong/ai相关/learn-claude-code/hello1.py\""
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
     ]
   },
   {
     "role": "user",
     "content": [
       {
-        "type": "tool_result",
+        "content": "(no output)",
         "tool_use_id": "call_5c75288a839b4c2ab707be32",
-        "content": "(no output)"
+        "type": "tool_result"
       }
     ]
   },
   {
     "role": "assistant",
-    "content": [ToolUseBlock(id="call_ef74bd8b5f49439b84c3f0e5", caller=None, input={
-        "command": "cat "E:/xiekaiyong/ai相关/learn-claude-code/hello1.py""
-      }, name="bash", type="tool_use")
+    "content": [
+      {
+        "caller": null,
+        "id": "call_ef74bd8b5f49439b84c3f0e5",
+        "input": {
+          "command": "cat \"E:/xiekaiyong/ai相关/learn-claude-code/hello1.py\""
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
     ]
   },
   {
     "role": "user",
     "content": [
       {
-        "type": "tool_result",
+        "content": "print(\"Hello, World!\")",
         "tool_use_id": "call_ef74bd8b5f49439b84c3f0e5",
-        "content": "print("Hello, World!")"
+        "type": "tool_result"
       }
     ]
   },
   {
     "role": "assistant",
-    "content": [ToolUseBlock(id="call_c33e55a5e9244dccbc8f220a", caller=None, input={
-        "command": "python 'E:/xiekaiyong/ai相关/learn-claude-code/hello1.py'"
-      }, name="bash", type="tool_use")
+    "content": [
+      {
+        "caller": null,
+        "id": "call_c33e55a5e9244dccbc8f220a",
+        "input": {
+          "command": "python 'E:/xiekaiyong/ai相关/learn-claude-code/hello1.py'"
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
     ]
   },
   {
     "role": "user",
     "content": [
       {
-        "type": "tool_result",
+        "content": "Hello, World!",
         "tool_use_id": "call_c33e55a5e9244dccbc8f220a",
-        "content": "Hello, World!"
+        "type": "tool_result"
       }
     ]
   },
   {
     "role": "assistant",
-    "content": [TextBlock(citations=None, text="The file `hello1.py` has been created and works correctly — it prints `Hello, World!` when run.", type="text")
+    "content": [
+      {
+        "citations": null,
+        "text": "The file `hello1.py` has been created and works correctly — it prints `Hello, World!` when run.",
+        "type": "text"
+      }
     ]
   }
 ]

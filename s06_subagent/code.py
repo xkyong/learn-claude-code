@@ -189,6 +189,7 @@ SUB_HANDLERS = {
 def spawn_subagent(description: str) -> str:
     """Spawn a subagent with fresh messages[], return summary only."""
     print(f"\n\033[35m[Subagent spawned]\033[0m")
+    print(f"\033[90m[Subagent task] {description}\033[0m")
     messages = [{"role": "user", "content": description}]  # fresh context
 
     for _ in range(30):  # safety limit
@@ -228,6 +229,8 @@ def spawn_subagent(description: str) -> str:
         if not result:
             result = "Subagent stopped after 30 turns without final answer."
     print(f"\033[35m[Subagent done]\033[0m")
+
+    # print('subagent messages---', messages)
     return result  # only summary, entire message history discarded
 
 # Add task tool to parent's tools
@@ -359,6 +362,7 @@ if __name__ == "__main__":
         trigger_hooks("UserPromptSubmit", query)
         history.append({"role": "user", "content": query})
         agent_loop(history)
+        print('main agent history---', history)
         for block in history[-1]["content"]:
             if getattr(block, "type", None) == "text":
                 print(block.text)

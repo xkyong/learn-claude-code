@@ -89,7 +89,7 @@ def agent_loop(messages: list):
             tools=TOOLS, max_tokens=8000,
         )
 
-        # role 为 assistant，content 字段的内容做说明是模型返回的
+        # role 为 assistant，content 字段的内容则说明是模型返回的
         # Append assistant turn
         messages.append({"role": "assistant", "content": response.content})
 
