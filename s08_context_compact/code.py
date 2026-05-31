@@ -128,14 +128,14 @@ def safe_path(p: str) -> Path:
 
 def run_bash(command: str) -> str:
     try:
-        r = subprocess.run(command, shell=True, cwd=WORKDIR, capture_output=True, text=True, timeout=120)
+        r = subprocess.run(command, shell=True, cwd=WORKDIR, capture_output=True, text=True, encoding="utf-8", errors='replace', timeout=120)
         out = (r.stdout + r.stderr).strip()
         return out[:50000] if out else "(no output)"
     except subprocess.TimeoutExpired: return "Error: Timeout (120s)"
 
 def run_read(path: str, limit: int | None = None) -> str:
     try:
-        lines = safe_path(path).read_text().splitlines()
+        lines = safe_path(path).read_text(encoding="utf-8", errors='replace').splitlines()
         if limit and limit < len(lines): lines = lines[:limit] + [f"... ({len(lines) - limit} more lines)"]
         return "\n".join(lines)
     except Exception as e: return f"Error: {e}"
@@ -464,6 +464,7 @@ if __name__ == "__main__":
         if query.strip().lower() in ("q", "exit", ""): break
         history.append({"role": "user", "content": query})
         agent_loop(history)
+        print('history---', history)
         for block in history[-1]["content"]:
             if getattr(block, "type", None) == "text": print(block.text)
         print()

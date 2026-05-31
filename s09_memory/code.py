@@ -611,6 +611,7 @@ if __name__ == "__main__":
         if query.strip().lower() in ("q", "exit", ""): break
         history.append({"role": "user", "content": query})
         agent_loop(history)
+        print('history---', history)
         for block in history[-1]["content"]:
             if getattr(block, "type", None) == "text": print(block.text)
         print()

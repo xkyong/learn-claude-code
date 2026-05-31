@@ -1,0 +1,215 @@
+[
+  {
+    "role": "user",
+    "content": "I prefer using tabs for indentation, not spaces. Remember that."
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "citations": null,
+        "text": "Got it! I'll remember your preference for tabs over spaces for indentation.",
+        "type": "text"
+      },
+      {
+        "caller": null,
+        "id": "toolu_vrtx_01WyKMTvyMjLMvcib11cPa87",
+        "input": {
+          "command": "mkdir -p .claude/memories 2>/dev/null; echo \"User prefers tabs for indentation, not spaces. Apply this to all code written or edited for this user.\" > .claude/memories/indentation-preference.md && cat .claude/memories/indentation-preference.md"
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "content": "系统找不到指定的路径。",
+        "tool_use_id": "toolu_vrtx_01WyKMTvyMjLMvcib11cPa87",
+        "type": "tool_result"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "caller": null,
+        "id": "call_b674281dcbd64502a941dd7a",
+        "input": {
+          "command": "if not exist .claude\\memories mkdir .claude\\memories"
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "content": "(no output)",
+        "tool_use_id": "call_b674281dcbd64502a941dd7a",
+        "type": "tool_result"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "caller": null,
+        "id": "toolu_vrtx_017L18et5yBxahhZLcVoQKcD",
+        "input": {
+          "content": "# Indentation Preference\n\nUser prefers **tabs** for indentation, not spaces.\n\nApply this to all code written or edited for this user across all languages and file types, unless a specific file/project enforces otherwise (e.g., Python PEP 8 in an existing spaces-based codebase, or files like YAML that require spaces).\n",
+          "path": ".claude/memories/indentation-preference.md"
+        },
+        "name": "write_file",
+        "type": "tool_use"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "content": "Wrote 319 bytes to .claude/memories/indentation-preference.md",
+        "tool_use_id": "toolu_vrtx_017L18et5yBxahhZLcVoQKcD",
+        "type": "tool_result"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "citations": null,
+        "text": "Saved your preference to `.claude/memories/indentation-preference.md`. From now on, I'll use **tabs** for indentation in any code I write or edit for you.\n\nA couple of practical caveats I'll follow automatically:\n- If a file already uses spaces consistently, I'll match the existing style to avoid mixed indentation (unless you ask me to convert it).\n- For formats that *require* spaces (e.g., YAML), I'll still use spaces since tabs aren't valid there.\n\nLet me know if you'd like me to convert any existing files in this project from spaces to tabs.",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": "Create a Python file called test.py inside s09_memory"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "caller": null,
+        "id": "toolu_vrtx_011gksYVqGxe1bgUg6L4Xcv8",
+        "input": {
+          "command": "if not exist s09_memory mkdir s09_memory"
+        },
+        "name": "bash",
+        "type": "tool_use"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "content": "(no output)",
+        "tool_use_id": "toolu_vrtx_011gksYVqGxe1bgUg6L4Xcv8",
+        "type": "tool_result"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "caller": null,
+        "id": "toolu_vrtx_01Qq8uJkfApKkfuRu7HTBL2e",
+        "input": {
+          "content": "def main():\n\tmessage = \"Hello from s09_memory/test.py\"\n\tprint(message)\n\n\nif __name__ == \"__main__\":\n\tmain()\n",
+          "path": "s09_memory/test.py"
+        },
+        "name": "write_file",
+        "type": "tool_use"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "content": "Wrote 108 bytes to s09_memory/test.py",
+        "tool_use_id": "toolu_vrtx_01Qq8uJkfApKkfuRu7HTBL2e",
+        "type": "tool_result"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "citations": null,
+        "text": "Created `s09_memory/test.py` with tab indentation as per your preference. The file contains a simple `main()` function that prints a greeting message.",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": "What did I tell you about my preferences?"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "citations": null,
+        "text": "You told me you prefer **tabs over spaces for indentation**. I've saved that preference and applied it just now when creating `s09_memory/test.py` (the `main()` function body and the `if __name__ == \"__main__\":` block are both indented with tabs).",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": "I also prefer single quotes over double quotes for strings."
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "citations": null,
+        "text": "Got it! I'll remember that you prefer single quotes over double quotes for strings.",
+        "type": "text"
+      },
+      {
+        "caller": null,
+        "id": "toolu_vrtx_01JKGXLzT5qhdodgbgUWvNR3",
+        "input": {
+          "content": "# Quote Style Preference\n\nUser prefers **single quotes** (`'...'`) over double quotes (`\"...\"`) for strings.\n\nApply this to all code written or edited for this user across all languages that support both styles (Python, JavaScript, TypeScript, etc.).\n\nCaveats:\n- Use double quotes when the string contains a single quote/apostrophe to avoid escaping (e.g., `\"it's\"`).\n- For languages/formats that require a specific style (e.g., JSON requires double quotes), follow the format's requirements.\n- If a file/project already consistently uses double quotes, match the existing style to avoid inconsistency unless asked to convert.\n",
+          "path": ".claude/memories/quote-style-preference.md"
+        },
+        "name": "write_file",
+        "type": "tool_use"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": [
+      {
+        "content": "Wrote 627 bytes to .claude/memories/quote-style-preference.md",
+        "tool_use_id": "toolu_vrtx_01JKGXLzT5qhdodgbgUWvNR3",
+        "type": "tool_result"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "citations": null,
+        "text": "Saved to `.claude/memories/quote-style-preference.md`. I'll now use **single quotes** for strings by default.\n\nWant me to update the `s09_memory/test.py` I just created to use single quotes? It currently has `\"Hello from s09_memory/test.py\"` which should be `'Hello from s09_memory/test.py'` under your new preference.",
+        "type": "text"
+      }
+    ]
+  }
+]
